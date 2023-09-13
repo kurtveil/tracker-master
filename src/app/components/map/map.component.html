@@ -1,0 +1,26 @@
+<div class="map-container">
+    <img src="../../assets/images/pattern-bg.png" class="bg-pattern" alt="">
+    <div class="container">
+        <h1 class="title">IP Address Tracker </h1>
+        <div class="search-container">
+            <input type="text" class="search-box" placeholder="Search for any  IP address or domain" #search>
+            <button class="search-button"><img src="../../../assets/images/icon-arrow.svg" alt="" (click)="searchAddress(search.value)"></button>
+        </div>
+
+    </div>
+    <div class="container-info">
+      <ul>
+          <li *ngFor="let item of infoTitle" class="info-title">{{item}}</li>
+      </ul>
+  
+      <ul>
+          <li class="info-title">{{geoLocate.ip}}</li>
+          <li class="info-title"> {{geoLocate.location.region}}, {{geoLocate.location.country}}</li>
+          <li class="info-title">{{geoLocate.location.timezone}}</li>
+          <li class="info-title">{{geoLocate.isp}}</li>
+      </ul>
+    </div>
+
+
+        <div id="map"></div>
+</div>
