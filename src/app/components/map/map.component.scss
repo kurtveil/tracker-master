@@ -9,7 +9,7 @@
 
 .container {
     position: absolute;
-    top: 8%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -32,23 +32,23 @@
     height: 4vh;
   }
   .search-box {
-    height: 44px;
+    height: 6vh;
     font-size: 15px;
     border: 0;
-    width: 90%;
-    border-radius: 12px;
+    width: 95%;
+    border-radius: 1.8vh;
     padding: 0 0 0 6%;
   }
   .search-button {
     position: absolute;
     right: 0%;
-    top: 11%;
+    top: 10%;
     background-color: black;
     border-radius: 1% 28% 28% 1px;
     border: 0;
     color: #FFF;
     width: 49px;
-    height: 47px;
+    height: 6vh;
     outline: 0;
     cursor: pointer;
   }
@@ -62,7 +62,7 @@
   }
   .info-description{
     display: inline-flex;
-    font-size: 11px;
+    font-size: 2.3vh;
     font-weight: 700;
     letter-spacing: 1.1px;
   }
@@ -78,18 +78,39 @@
     transform: translate(-50%, -50%);
     z-index: 999;
     background: white;
-    width: 60%;
-    height: 15vh;
+    width: 50%;
+    height: 17vh;
     border-radius: 14px;
+  
+  }
+ 
+  .box-info-border, .box-info{
+    display: grid;
+    margin: 3%;
+    width: 19%;
   }
   .box-info-border{
-    display: grid;
-    margin: 5%;
-    width: 16%;
     border-right: 0.1px solid;
   }
-  .box-info{
-    display: grid;
-    margin: 5%;
-    width: 16%;
+  @media screen and (max-width:375px) {
+    .container-info{
+      display: block;
+      width: 92%;
+      height: 37%;
+      top: 43%;
+    }
+    .box-info-border, .box-info{
+      width: auto ;
+      text-align: center;
+      display: block ;
+      border: none ;
+    }
+    .info-description{
+      display: block;
+      height: 26px;
+    }
+    .search-button{
+      top: 14%;
+      height: 40px;
+    }
   }

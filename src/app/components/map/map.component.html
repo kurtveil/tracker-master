@@ -3,8 +3,8 @@
     <div class="container">
         <h1 class="title">IP Address Tracker </h1>
         <div class="search-container">
-            <input type="text" class="search-box" placeholder="Search for any  IP address or domain" #search>
-            <button class="search-button"><img src="../../../assets/images/icon-arrow.svg" alt="" (click)="searchAddress(search.value)"></button>
+            <input type="text" class="search-box" placeholder="Search for any  IP address or domain" #search >
+            <button class="search-button" (click)="searchAddress(search.value)"><img src="../../../assets/images/icon-arrow.svg" alt="" ></button>
         </div>
 
     </div>

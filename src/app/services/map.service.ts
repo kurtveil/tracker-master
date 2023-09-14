@@ -12,14 +12,13 @@ export class MapService {
   get headers(){
     return {
       headers : {
-        'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+        'Content-Type' : 'application/x-www-form-urlencoded; charset=UTF-8',
+        // 'Access-Control-Allow-Origin': "*"
     }
     };
   }
   geoLocation(address: string){
-    
-    return this.http.get(`${ this.baseUrl }/v2/country,city?apiKey=${environment.API_KEY}&apiAddress=${address}`, this.headers
-  ); 
+    return this.http.get(`${ this.baseUrl }/v2/country,city?apiKey=${environment.API_KEY}&apiAddress=${address}`, this.headers ); 
   }
 
 }

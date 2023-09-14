@@ -1,8 +1,7 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { Map, marker, tileLayer } from 'leaflet';
+import { Map, marker, tileLayer, icon } from 'leaflet';
 import { GeoLocate } from 'src/app/models/geoLocate.model';
 import { MapService } from 'src/app/services/map.service';
-// import { environment } from '../environments/environment';
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
@@ -18,6 +17,7 @@ export class MapComponent implements OnInit, AfterViewInit {
     tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(this.map);
+
   }
   ngAfterViewInit(): void {
 
@@ -32,7 +32,12 @@ export class MapComponent implements OnInit, AfterViewInit {
       this.geoLocate = res;
       this.map.setView([this.geoLocate.location.lat, this.geoLocate.location.lng], 13);
     
-      const markerItem = marker([this.geoLocate.location.lat, this.geoLocate.location.lng]).addTo(this.map);
+      var greenIcon = icon({
+        iconUrl: '../../assets/images/icon-location.svg',
+        iconSize:     [45, 60], 
+        iconAnchor:   [22, 94], 
+    });
+      const markerItem = marker([this.geoLocate.location.lat, this.geoLocate.location.lng], {icon: greenIcon}).addTo(this.map);
       this.map.fitBounds([
         [markerItem.getLatLng().lat, markerItem.getLatLng().lng]
       ]);
