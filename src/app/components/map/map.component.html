@@ -9,16 +9,23 @@
 
     </div>
     <div class="container-info">
-      <ul>
-          <li *ngFor="let item of infoTitle" class="info-title">{{item}}</li>
-      </ul>
-  
-      <ul>
-          <li class="info-title">{{geoLocate.ip}}</li>
-          <li class="info-title"> {{geoLocate.location.region}}, {{geoLocate.location.country}}</li>
-          <li class="info-title">{{geoLocate.location.timezone}}</li>
-          <li class="info-title">{{geoLocate.isp}}</li>
-      </ul>
+        <div class="box-info-border">
+            <div class="info-title">IP ADDRESS</div>
+            <div class="info-description">{{geoLocate.ip}}</div>
+        </div>
+        <div class="box-info-border">
+            <div class="info-title">LOCATION</div>
+            <div class="info-description">{{geoLocate.location.region}}{{geoLocate.location.region?',':''}}{{geoLocate.location.country}}</div>
+        </div>
+        <div class="box-info-border">
+            <div class="info-title">TIMEZONE</div>
+            <div class="info-description">{{geoLocate.location.timezone}}</div>
+        </div>
+        <div class="box-info">
+            <div class="info-title">ISP</div>
+            <div class="info-description">{{geoLocate.isp}}</div>
+        </div>
+      
     </div>
 
 
